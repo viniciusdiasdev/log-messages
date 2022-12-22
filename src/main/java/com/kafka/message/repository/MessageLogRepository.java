@@ -9,14 +9,5 @@ import java.util.List;
 
 @Repository
 public interface MessageLogRepository extends JpaRepository<MessageLog, Long> {
-
-    @Query(
-            value = "select * from MESSAGE_LOG m where m.IS_READ = FALSE",
-            nativeQuery = true)
-    List<MessageLog> findAllMessagesNotLog();
-
-    @Query(
-            value = "select * from MESSAGE_LOG m where m.IS_READ = FALSE",
-            nativeQuery = true)
-    List<MessageLog> findOneMessageNotLog();
+    List<MessageLog> findByIsReadIsFalse();
 }

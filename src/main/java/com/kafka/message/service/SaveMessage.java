@@ -14,7 +14,6 @@ public class SaveMessage {
 
     private static final Logger logger = LoggerFactory.getLogger(SaveMessage.class);
 
-
     @Autowired
     MessageLogRepository messageLogRepository;
 

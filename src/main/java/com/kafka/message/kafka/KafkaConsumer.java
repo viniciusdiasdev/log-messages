@@ -11,7 +11,7 @@ public class KafkaConsumer {
     @Autowired
     MessageService messageService;
 
-    @KafkaListener(topics = "vinicius_client", groupId = "client-groupId")
+    @KafkaListener(topics = "vini_client", groupId = "client-groupId")
     public void consumer(String message){
         messageService.createMessage(message);
     }

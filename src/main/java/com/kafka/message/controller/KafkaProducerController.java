@@ -1,6 +1,5 @@
 package com.kafka.message.controller;
 
-import com.kafka.message.repository.MessageLogRepository;
 import com.kafka.message.service.MessageLogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -19,7 +18,7 @@ public class KafkaProducerController {
 
     @GetMapping("/producer/{message}")
     public void producer(@PathVariable("message") String message){
-        this.kafkaTemplate.send("vinicius.client",message);
+        this.kafkaTemplate.send("vini_client",message);
     }
 
     @GetMapping("messages")

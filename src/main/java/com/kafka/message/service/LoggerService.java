@@ -22,15 +22,10 @@ public class LoggerService {
 
     public void loggMessages(){
         List<MessageLog> messageLogList = messageLogService.findAll();
-        logger.info(messageLogList.toString());
+        messageLogList.forEach(messageLog -> logger.info(messageLog.toString()));
     }
 
-    public void loggMessage(){
-        MessageLog message = messageLogService.getOne();
-        logger.info(message.toString());
-    }
-
-    @Scheduled(fixedDelay = 10000)
+    @Scheduled(fixedDelay = 5000)
     public void run(){
         loggMessages();
     }

@@ -18,6 +18,5 @@ public class UpdateData {
     public void updateMessage(MessageLog messageLog){
         MessageLog updpateMessage = new MessageLog(messageLog.getId() ,messageLog.getMessage(), Boolean.TRUE);
         messageLogRepository.save(updpateMessage);
-        logger.info("mensagem sofreu update");
     }
 }

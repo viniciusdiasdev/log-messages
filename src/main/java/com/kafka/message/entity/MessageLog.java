@@ -6,6 +6,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import org.springframework.stereotype.Component;
 
+import java.util.Date;
+
 @Entity
 @Component
 public class MessageLog {
@@ -59,7 +61,6 @@ public class MessageLog {
     public String toString() {
         return "MessageLog{" +
                 "id=" + id +
-                ", message='" + message + '\'' +
-                '}';
+                ", message='" + message + '\'' + ", date:" + new Date() + "}";
     }
 }

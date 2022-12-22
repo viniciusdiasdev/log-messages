@@ -17,19 +17,9 @@ public class MessageLogService {
     @Autowired
     UpdateData updateData;
 
-    private MessageLog testeMessage;
-
     public List<MessageLog> findAll(){
-        List<MessageLog> allMessagesNotLog = messageLogRepository.findAllMessagesNotLog();
+        List<MessageLog> allMessagesNotLog = messageLogRepository.findByIsReadIsFalse();
         allMessagesNotLog.forEach(messageLog -> updateData.updateMessage(messageLog));
-        allMessagesNotLog.forEach(messageLog -> testeMessage = messageLog);
         return allMessagesNotLog;
-    }
-
-    public MessageLog getOne(){
-        List<MessageLog> allMessagesNotLog = messageLogRepository.findAllMessagesNotLog();
-        allMessagesNotLog.forEach(messageLog -> updateData.updateMessage(messageLog));
-        allMessagesNotLog.forEach(messageLog -> testeMessage = messageLog);
-        return testeMessage;
     }
 }
